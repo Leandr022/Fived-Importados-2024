@@ -1,14 +1,15 @@
-import { FlatList, StyleSheet} from 'react-native'
-import categories from '../data/categories.json'
+import { FlatList, StyleSheet } from 'react-native'
 import Category from './Category'
+import { useGetCategoriesQuery } from '../services/shop'
 
-const Categories = ({item}) => {
 
+const Categories = () => {
+const {data:categories} = useGetCategoriesQuery()
     return (
         <FlatList
             data={categories}
             keyExtractor={item => item}
-            renderItem={({item}) => <Category  item={item}/>}
+            renderItem={({item}) => <Category item={item} />}
         />
     )
 }
