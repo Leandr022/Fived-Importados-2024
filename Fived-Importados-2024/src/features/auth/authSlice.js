@@ -14,6 +14,11 @@ export const authSlice = createSlice({
             state.email = action.payload.email
             state.idToken = action.payload.idToken
             state.localId = action.payload.localId
+        },
+        clearUser: (state) => {
+        state.email = "",
+        state.idToken = ""
+        state.localId = ""
         }
     }
 })

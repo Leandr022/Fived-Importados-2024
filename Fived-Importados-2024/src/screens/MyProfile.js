@@ -3,13 +3,19 @@ import React, { useEffect } from 'react'
 import SubmitButton from '../components/SubmitButton'
 import { useGetUserQuery } from '../services/shop'
 import { useSelector } from 'react-redux'
+import LoadingSpinner from '../components/LoadingSpinner'
+
+
 
 const MyProfile = ({navigation}) => {
 const localId = useSelector(state => state.auth.localId)
 const {data:user,isSuccess,isLoading} = useGetUserQuery({localId})
+useEffect(()=>{
+    if(isSuccess) console.log(user)
+    if(isError) console.log(error)
+},[isSuccess,isError])
 
-
-if(isLoading) return null
+if(isLoading) return <LoadingSpinner/>
     return (
         <View style={styles.container}>
         <Image

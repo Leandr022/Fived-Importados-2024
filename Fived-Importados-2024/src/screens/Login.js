@@ -8,7 +8,6 @@ import { setUser } from '../features/auth/authSlice'
 import { useDispatch } from 'react-redux'
 import { loginSchema } from '../validations/loginSchema'
 
-
 const Login = ({navigation}) => {
 
     const [email,setEmail] = useState("")
