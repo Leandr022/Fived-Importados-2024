@@ -14,18 +14,19 @@ const MainNavigator = () => {
     
     useEffect(()=>{
         (async ()=>{
-        const sessions = await fetchSession()
-        if(sessions.rows.length){
-            dispatch(setUser(sessions.rows._array[0]))
+            const sessions = await fetchSession()
+            if(sessions){
+            dispatch(setUser(sessions))
         }
-        })()
+    })()
     },[])
 
 return (
     <NavigationContainer>
-        {idToken ? <TabNavigator/>  : <AuthStack/> }
+    {idToken ? <TabNavigator/>  : <AuthStack/> }
+    
     </NavigationContainer>
-    )
+)
 }
 
 export default MainNavigator

@@ -14,7 +14,7 @@ const ShopStack = () => {
                     return {
                         header: () => <Header title= {
                             route.name === "Home" ?
-                                "Bienvenido" 
+                                "Fived Importados" 
                                 :
                             route.name === "Products" ?
                             route.params.category 

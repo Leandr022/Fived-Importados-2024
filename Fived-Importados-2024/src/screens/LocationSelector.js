@@ -4,7 +4,7 @@ import * as Location from 'expo-location';
 import MapPreview from '../components/MapPreview';
 import { mapStaticApi } from '../firebase/googleApi'
 import SubmitButton from '../components/SubmitButton'
-import { usePostUserLocationMutation } from '../services/shop';
+import { usePostUserLocationMutation } from '../services/users';
 import { useSelector } from 'react-redux';
 
 const LocationSelector = ({navigation}) => {
@@ -36,7 +36,7 @@ const LocationSelector = ({navigation}) => {
         (
             async () => {
                 if(location.latitude){
-                const urlReverseGeoding = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude} 
+                const urlReverseGeoding = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}
                                             &key=${mapStaticApi}`
                 const response  = await fetch(urlReverseGeoding)
                 const data = await response.json()
@@ -55,14 +55,14 @@ const LocationSelector = ({navigation}) => {
         navigation.navigate("MyProfile")
     }
 
-    return (
-        <View style={styles.container}>
-        <Text>Direccion: {address}</Text>
-        <MapPreview location={location}/>
-        <SubmitButton title="Confirmar Ubicacion" onPress={handleConfirmLocation}/>
+return (
+    <View style={styles.container}>
+    <Text>Direccion: {address}</Text>
+    <MapPreview location={location}/>
+    <SubmitButton title="Confirmar Ubicacion" onPress={handleConfirmLocation}/>
 
-        </View>
-    )
+    </View>
+)
 }
 
 export default LocationSelector

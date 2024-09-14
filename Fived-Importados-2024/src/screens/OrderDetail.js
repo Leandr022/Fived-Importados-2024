@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { useGetOrderByUserQuery } from '../services/shop'
+import { useGetOrderByUserQuery } from '../services/orders'
 
 const OrderDetail = ({route}) => {
 
@@ -15,7 +15,7 @@ const OrderDetail = ({route}) => {
 
 return (
     <View>
-        <Text>OrderDetail</Text>
+    <Text>OrderDetail</Text>
     </View>
 )
 }

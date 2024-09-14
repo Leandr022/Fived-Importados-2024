@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, FlatList } from 'react-native'
 import OrderItem from '../components/OrderItem'
-import {  useGetOrdersByUserQuery } from '../services/shop'
+import {  useGetOrdersByUserQuery } from '../services/orders'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useSelector } from 'react-redux'
 
@@ -16,11 +16,11 @@ if(isLoading) return <LoadingSpinner/>
 if(orders.length === 0) return <View><Text>vacio</Text></View>
 return (
     <View>
-        <FlatList
+    <FlatList
         data={orders}
         keyExtractor={(item)=> item.id}
         renderItem={({item})=> <OrderItem item={item}/>}
-        />
+    />
     </View>
 )
 }

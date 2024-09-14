@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
-import OrdersStack from './OrdersStack'
+import OrdersStacks from './OrdersStacks'
 import { colors } from '../global/colors'
 import TabBarIcon from '../components/TabBarIcon'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
@@ -40,7 +40,7 @@ const TabNavigator = () => {
             />
             <Tab.Screen
                 name='OrdersStack' 
-                component={OrdersStack}
+                component={OrdersStacks}
                 options={{
                     tabBarIcon:({focused}) => {
                         return <TabBarIcon focused={focused} text="Ordenes" icon="list"/>
