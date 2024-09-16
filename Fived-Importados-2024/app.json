@@ -18,10 +18,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.leandr022.Fivedimportados2024"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "adbfae66-7c61-4c55-b0a7-f503f80d0ccb"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
