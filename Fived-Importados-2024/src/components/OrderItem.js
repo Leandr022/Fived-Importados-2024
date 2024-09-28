@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable,StyleSheet, Text, View } from 'react-native'
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { colors } from '../global/colors';
 import { useNavigation } from '@react-navigation/native';
